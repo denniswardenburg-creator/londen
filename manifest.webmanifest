@@ -1,0 +1,10 @@
+{
+  "name":"Kim & Dennis in Londen",
+  "short_name":"Londen",
+  "description":"Persoonlijke 3-daagse reisgids voor Kim & Dennis in Londen.",
+  "start_url":"./#home",
+  "display":"standalone",
+  "background_color":"#f6f4ef",
+  "theme_color":"#17324d",
+  "icons":[]
+}

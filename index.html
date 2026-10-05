@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#17324d" />
+  <meta name="description" content="Persoonlijke reisgids voor Kim & Dennis: drie dagen Londen vanuit Croydon." />
+  <title>Kim & Dennis in Londen</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://commons.wikimedia.org" />
+  <link rel="preconnect" href="https://tiles.openfreemap.org" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Naar inhoud</a>
+
+  <header class="topbar">
+    <button class="icon-btn mobile-only" id="menuBtn" aria-label="Menu openen" aria-expanded="false">☰</button>
+    <a class="brand" href="#home" aria-label="Startpagina Kim & Dennis in Londen">
+      <span class="brand-mark">KD</span>
+      <span><strong>Kim & Dennis</strong><small>in Londen</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Hoofdnavigatie">
+      <a href="#home">Home</a>
+      <a href="#dag1">Dag 1</a>
+      <a href="#dag2">Dag 2</a>
+      <a href="#dag3">Dag 3</a>
+      <a href="#bezienswaardigheden">Bezienswaardigheden</a>
+      <a href="#ov">OV</a>
+      <a href="#betalen">Betalen</a>
+    </nav>
+    <button class="share-btn" id="shareBtn" title="Deel deze reisgids">Delen ↗</button>
+  </header>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <span class="drawer-title">Kim & Dennis in Londen</span>
+      <button class="icon-btn" id="closeMenuBtn" aria-label="Menu sluiten">×</button>
+    </div>
+    <nav aria-label="Mobiele navigatie">
+      <a href="#home">🏠 Start</a>
+      <a href="#aankomst">✈️ Aankomst & hotel</a>
+      <a href="#dag1">👑 Dag 1 · Westminster</a>
+      <a href="#dag2">🏰 Dag 2 · Tower & City</a>
+      <a href="#dag3">🎭 Dag 3 · Camden & West End</a>
+      <a href="#bezienswaardigheden">📍 Bezienswaardigheden</a>
+      <a href="#kaart">🗺️ Interactieve kaart</a>
+      <a href="#ov">🚆 Openbaar vervoer</a>
+      <a href="#betalen">💳 Betalen in Londen</a>
+      <a href="#fotobronnen">📷 Fotobronnen</a>
+    </nav>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <main id="main" tabindex="-1"></main>
+
+  <footer class="footer">
+    <div>
+      <strong>Kim & Dennis in Londen</strong>
+      <p>Persoonlijke reisgids · eind oktober 2026 · uitvalsbasis Croydon</p>
+    </div>
+    <div class="footer-links">
+      <a href="#ov">OV-info</a>
+      <a href="#betalen">Betalen</a>
+      <a href="#fotobronnen">Fotobronnen</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.22/leaflet-maplibre-gl.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
