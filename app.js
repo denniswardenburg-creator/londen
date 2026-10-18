@@ -286,7 +286,7 @@ function hero(){
       <div class="hero-actions">
         <a class="btn btn-primary" href="#dag1">Start met dag 1 →</a>
         <a class="btn btn-secondary" href="#kaart">Bekijk de kaart</a>
-        <a class="btn btn-secondary" href="#betalen">Betalen & OV</a>
+        <a class="btn btn-secondary" href="#planner">📍 OV-route plannen</a>
       </div>
     </div>
   </section>`;
@@ -338,12 +338,12 @@ function renderSpots(){
 }
 function spotCard(s){return `<article class="spot-card" data-day="${s.day}" data-name="${esc(s.name.toLowerCase())}"><img loading="lazy" src="${photo(s.photo)}" alt="${esc(s.name)}"><div class="spot-card-body"><div class="kicker"><span class="day-dot d${s.day}"></span>${dayLabel(s.day)}</div><h3>${s.name}</h3><p>${s.summary}</p><div class="spot-actions">${spotBtn(s.slug)}<button class="check-btn ${isVisited(s.slug)?'done':''}" data-check="${s.slug}">${isVisited(s.slug)?'✓ Bezocht':'○ Afvinken'}</button></div></div></article>`}
 
-function renderSpot(slug){const s=spots[slug]; if(!s) return render404();return `<section class="spot-hero"><img src="${photo(s.photo)}" alt="${esc(s.name)}"><div class="spot-hero-inner"><div class="kicker">${dayLabel(s.day)}</div><h1>${s.name}</h1><p>${s.summary}</p><div class="hero-actions"><a class="btn btn-primary" href="${maps(s.mapQuery)}" target="_blank" rel="noopener">Route openen ↗</a><button class="btn btn-secondary check-btn ${isVisited(s.slug)?'done':''}" data-check="${s.slug}">${isVisited(s.slug)?'✓ Bezocht':'○ Afvinken'}</button></div></div></section>
+function renderSpot(slug){const s=spots[slug]; if(!s) return render404();return `<section class="spot-hero"><img src="${photo(s.photo)}" alt="${esc(s.name)}"><div class="spot-hero-inner"><div class="kicker">${dayLabel(s.day)}</div><h1>${s.name}</h1><p>${s.summary}</p><div class="hero-actions"><a class="btn btn-primary" href="#planner=${s.slug}">Plan OV-route hiernaartoe →</a><button class="btn btn-secondary check-btn ${isVisited(s.slug)?'done':''}" data-check="${s.slug}">${isVisited(s.slug)?'✓ Bezocht':'○ Afvinken'}</button></div></div></section>
 <section class="section"><div class="shell"><div class="fact-grid"><div class="fact"><small>Bezoektijd</small><strong>${s.time}</strong></div><div class="fact"><small>Kosten</small><strong>${s.cost}</strong></div><div class="fact"><small>Dichtstbij</small><strong>${s.nearest}</strong></div><div class="fact"><small>Programma</small><strong>${dayLabel(s.day)}</strong></div></div><div class="two-col"><div class="panel"><h3>Waarom deze stop?</h3><p>${s.why}</p><h3>Praktisch</h3><p>${s.practical}</p><div class="hero-actions">${openExternal(s.official,'Officiële website')}${openExternal(maps(s.mapQuery),'Google Maps')}</div></div><div><div class="callout green"><strong>Op de route:</strong> bekijk de volledige planning van <a href="#dag${s.day}">dag ${s.day}</a> om te zien welke stop ervoor en erna komt.</div><p class="credit" style="margin-top:18px">${s.credit}. <a href="${commonsPage(s.photo)}" target="_blank" rel="noopener">Bron en licentie op Wikimedia Commons ↗</a></p></div></div></div></section>`}
 
 function renderMap(){return `<section class="page-head"><div class="shell"><div class="breadcrumb"><a href="#home">Home</a> / Kaart</div><div class="kicker">Oriëntatie</div><h1>Interactieve kaart</h1><p>Alle hoofdlocaties van de drie dagen. Gebruik de knoppen om één dag te tonen en tik op een marker voor de detailpagina.</p></div></section><section class="section"><div class="shell"><div class="map-controls"><button class="filter-btn active" data-map-day="all">Alle dagen</button><button class="filter-btn" data-map-day="1">Dag 1</button><button class="filter-btn" data-map-day="2">Dag 2</button><button class="filter-btn" data-map-day="3">Dag 3</button></div><div id="map"></div><div class="map-legend"><span><span class="day-dot d1"></span>Dag 1 · Westminster</span><span><span class="day-dot d2"></span>Dag 2 · Tower/City</span><span><span class="day-dot d3"></span>Dag 3 · Camden/West End</span></div><p class="credit">Kaartweergave: OpenFreeMap · kaartdata © OpenStreetMap-bijdragers.</p></div></section>`}
 
-function renderOV(){return `<section class="page-head"><div class="shell"><div class="breadcrumb"><a href="#home">Home</a> / Openbaar vervoer</div><div class="kicker">Van Croydon naar Londen</div><h1>Openbaar vervoer</h1><p>Het belangrijkste onderscheid: vanaf East Croydon neem je eerst een <strong>National Rail-trein</strong>. Pas in centraal Londen gebruik je zo nodig de Underground.</p></div></section>
+function renderOV(){return `<section class="page-head"><div class="shell"><div class="breadcrumb"><a href="#home">Home</a> / Openbaar vervoer</div><div class="kicker">Van Croydon naar Londen</div><h1>Openbaar vervoer</h1><div class="hero-actions"><a class="btn btn-dark" href="#planner">📍 Plan een OV-route vanaf hier →</a></div><p>Het belangrijkste onderscheid: vanaf East Croydon neem je eerst een <strong>National Rail-trein</strong>. Pas in centraal Londen gebruik je zo nodig de Underground.</p></div></section>
 <section class="section"><div class="shell">
 <div class="two-col"><div class="panel"><h3>🚆 East Croydon → Victoria</h3><p>Voor Buckingham Palace, Westminster en West End. Southern vermeldt een reistijd van ongeveer <strong>16–18 minuten</strong> voor de snelste rechtstreekse treinen.</p><p><strong>East Croydon ligt in zone 5.</strong></p></div><div class="panel"><h3>🚆 East Croydon → London Bridge</h3><p>Voor Tower Bridge, Tower of London, Borough Market, The Shard en de South Bank. Vanaf London Bridge kun je veel van dag 2 lopen.</p></div></div>
 <div class="section-title" style="margin-top:38px"><div><div class="kicker">Contactloos</div><h2>Zo betaal je in het OV</h2></div></div>
@@ -367,6 +367,8 @@ function renderPhotoSources(){return `<section class="page-head"><div class="she
 function render404(){return `<section class="page-head"><div class="shell"><h1>Pagina niet gevonden</h1><p>Deze route bestaat niet in de reisgids.</p><a class="btn btn-dark" href="#home">Terug naar home</a></div></section>`}
 
 function router(){
+  disposePlanner();
+  if(mapInstance){mapInstance.remove();mapInstance=null;}
   window.scrollTo({top:0,behavior:'instant'});
   const hash=(location.hash||'#home').slice(1);
   const main=document.getElementById('main');
@@ -379,15 +381,17 @@ function router(){
   else if(hash==='bezienswaardigheden') main.innerHTML=renderSpots();
   else if(hash==='kaart') main.innerHTML=renderMap();
   else if(hash==='ov') main.innerHTML=renderOV();
+  else if(hash==='planner' || hash.startsWith('planner=')) main.innerHTML=renderPlanner(hash.split('=')[1]);
   else if(hash==='betalen') main.innerHTML=renderPayments();
   else if(hash==='fotobronnen') main.innerHTML=renderPhotoSources();
   else main.innerHTML=render404();
   bindPageEvents();
+  if(hash==='planner' || hash.startsWith('planner=')) initPlanner();
   if(hash==='kaart') setTimeout(()=>initMap('all'),80);
   closeDrawer();
   document.title = hash==='home' ? SITE.title : `${pageTitle(hash)} · ${SITE.title}`;
 }
-function pageTitle(hash){if(hash.startsWith('spot=')){return spots[hash.split('=')[1]]?.name||'Bezienswaardigheid'};return ({aankomst:'Aankomst',dag1:'Dag 1',dag2:'Dag 2',dag3:'Dag 3',bezienswaardigheden:'Bezienswaardigheden',kaart:'Kaart',ov:'Openbaar vervoer',betalen:'Betalen',fotobronnen:'Fotobronnen'})[hash]||'Reisgids'}
+function pageTitle(hash){if(hash.startsWith('planner=')) return 'OV-route plannen';if(hash.startsWith('spot=')){return spots[hash.split('=')[1]]?.name||'Bezienswaardigheid'};return ({aankomst:'Aankomst',dag1:'Dag 1',dag2:'Dag 2',dag3:'Dag 3',bezienswaardigheden:'Bezienswaardigheden',kaart:'Kaart',planner:'OV-route plannen',ov:'Openbaar vervoer',betalen:'Betalen',fotobronnen:'Fotobronnen'})[hash]||'Reisgids'}
 
 function bindPageEvents(){
   document.querySelectorAll('[data-check]').forEach(btn=>btn.addEventListener('click',()=>toggleVisited(btn.dataset.check)));
