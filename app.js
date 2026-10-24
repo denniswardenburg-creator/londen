@@ -1,5 +1,5 @@
 const SITE = {
-  updated: '5 oktober 2026',
+  updated: '24 oktober 2026',
   title: 'Kim & Dennis in Londen',
   hotel: 'Leonardo Hotel London Croydon',
 };
@@ -194,6 +194,58 @@ const spots = {
     time:'2–3 uur', cost:'Gratis rondlopen', nearest:'Camden Town',
     official:'https://camdenmarket.com/', mapQuery:'Camden Market London'
   },
+  hampstead: {
+    slug:'hampstead', name:'Hampstead Pergola & Hill Garden', day:3, emoji:'🌿', optional:true,
+    photo:'Hampstead Heath The Pergola.jpg', credit:'Foto: Loz Pycock / Wikimedia Commons (CC BY-SA 2.0)',
+    lat:51.5633, lng:-0.1787,
+    summary:'Een verscholen tuin bij Hampstead Heath met een verhoogde pergola, begroeide zuilen en rustige wandelpaden.',
+    why:'Een groene afwisseling op de stad, als optionele uitstap op dag 3. Kies hiervoor in plaats van een uitgebreid museumbezoek of een lange middag Camden.',
+    practical:'Gratis toegang via Inverforth Close, North End Way. Vanaf Golders Green is het ongeveer 20 minuten lopen; bus 210 of 268 komt dichterbij. Van 25 oktober t/m 15 november 2026 open van 08:30 tot 15:30. Er zijn onderhoudswerkzaamheden: delen kunnen ontoegankelijk zijn en er staan steigers. Controleer de officiële website voor vertrek.',
+    time:'45–75 min plus heen- en terugreis', cost:'Gratis', nearest:'Golders Green / bus 210 of 268',
+    official:'https://www.cityoflondon.gov.uk/things-to-do/green-spaces/hampstead-heath/where-to-go-at-hampstead-heath/hill-garden-and-pergola',
+    mapQuery:'The Hill Garden and Pergola, Inverforth Close, London'
+  },
+  stdunstan: {
+    slug:'stdunstan', name:'St Dunstan in the East Church Garden', day:2, emoji:'🌱', optional:true,
+    photo:'East Gate of the St Dunstan-in-the-East Garden (01).jpg', credit:'Foto: Ethan Doyle White / Wikimedia Commons (CC BY-SA 4.0)',
+    lat:51.5097, lng:-0.0826,
+    summary:'Een kleine stadstuin tussen de begroeide ruïnes van een historische kerk, vlak bij de Tower of London.',
+    why:'Een sfeervolle, rustige tussenstop na de Tower of London, voordat jullie via London Bridge naar Borough Market lopen.',
+    practical:'De ingang ligt aan St Dunstan’s Hill. Gratis en zonder reservering; open vanaf 08:00 tot 19:00 of zonsondergang als die eerder valt. Gesloten op 25 en 26 december en 1 januari. Plan deze tuin bij daglicht en controleer voor vertrek de officiële website.',
+    time:'20–30 min', cost:'Gratis', nearest:'Monument / Tower Hill',
+    official:'https://www.cityoflondon.gov.uk/things-to-do/city-gardens/find-a-garden/st-dunstan-in-the-east-church-garden',
+    mapQuery:'St Dunstan in the East Church Garden, London'
+  },
+  harrods: {
+    slug:'harrods', name:'Harrods', day:3, emoji:'🛍️', optional:true,
+    photo:'Harrods 2009.jpg', credit:'Foto: Herry Lawford / Wikimedia Commons (CC BY 2.0)',
+    lat:51.4994, lng:-0.1632,
+    summary:'Het beroemde warenhuis aan Brompton Road in Knightsbridge, met luxe afdelingen, etalages en Food Halls.',
+    why:'Leuk om rond te kijken, ook zonder iets te kopen. Een optionele winkelstop op dag 3 als alternatief voor een deel van Oxford & Regent Street.',
+    practical:'Adres: 87–135 Brompton Road. Harrods ligt buiten de wandelroute door het West End; plan een aparte rit naar Knightsbridge. Bekijk vooraf de actuele openingstijden op de officiële website.',
+    time:'45–90 min plus reistijd', cost:'Gratis entree · aankopen naar keuze', nearest:'Knightsbridge',
+    official:'https://www.harrods.com/', mapQuery:'Harrods, 87-135 Brompton Road, London'
+  },
+  mms: {
+    slug:'mms', name:'M&M’s World London', day:1, emoji:'🍫', optional:true,
+    photo:"Panorama showing the Lego Store and M&M's world in Leicester Square, London.jpg", credit:'Foto: Ed6767 / Wikimedia Commons (CC BY-SA 4.0)',
+    lat:51.5108, lng:-0.1315,
+    summary:'Een kleurrijke M&M’s-winkel bij Leicester Square met chocolade, souvenirs en grote personages voor foto’s.',
+    why:'Makkelijk mee te pakken tussen Covent Garden en Chinatown op dag 1. De LEGO Store ligt er direct tegenover.',
+    practical:'Adres: 1 Swiss Court, Leicester Square. Toegang is gratis; chocolade en souvenirs betaal je apart. Op zondag sluiten winkels eerder, dus bezoek ze dan vóór het diner. Controleer de actuele tijden op de officiële website.',
+    time:'20–40 min', cost:'Gratis entree · aankopen naar keuze', nearest:'Leicester Square / Piccadilly Circus',
+    official:'https://www.mms.com/en-us/explore/mms-stores/london', mapQuery:"M&M's World, 1 Swiss Court, London"
+  },
+  lego: {
+    slug:'lego', name:'LEGO Store Leicester Square', day:1, emoji:'🧱', optional:true,
+    photo:'Lego Store London sign at Lego store, Leicester Square, London, United Kingdom.jpg', credit:'Foto: Simeon87 / Wikimedia Commons',
+    lat:51.5105, lng:-0.1313,
+    summary:'De LEGO-winkel aan Leicester Square met grote bouwwerken en volop inspiratie voor LEGO-liefhebbers.',
+    why:'Een leuke korte winkelstop op dag 1, direct tegenover M&M’s World en vlak bij Chinatown.',
+    practical:'Adres: 3 Swiss Court. Gratis binnenlopen; reken bij drukte op een wachtrij. Maandag t/m zaterdag doorgaans 10:00–22:00, zondag 12:00–18:00. Controleer actuele tijden en activiteiten op de officiële winkelpagina.',
+    time:'30–45 min', cost:'Gratis entree · aankopen en activiteiten naar keuze', nearest:'Leicester Square / Piccadilly Circus',
+    official:'https://www.lego.com/en-gb/stores/store/lsq', mapQuery:'LEGO Store, 3 Swiss Court, Leicester Square, London'
+  },
   oxford: {
     slug:'oxford', name:'Oxford & Regent Street', day:3, emoji:'🛍️',
     photo:'Regent Street-London.jpg', credit:'Foto: Yair Haklai / Wikimedia Commons',
@@ -317,9 +369,10 @@ function dayCard(n){const d=days[n];return `<article class="day-card"><img class
 
 function renderDay(n){
   const d=days[n];
+  const extras = allSpots.filter(s=>s.day===n && s.optional);
   const route = d.schedule.filter(x=>x[3]).map(x=>spots[x[3]].name);
   return `<section class="page-head"><div class="shell"><div class="breadcrumb"><a href="#home">Home</a> / Dag ${n}</div><div class="kicker">Dag ${n}</div><h1>${d.title}</h1><p>${d.intro}</p><div class="route-summary">${route.map(x=>`<span class="route-stop">${x}</span>`).join('')}</div></div></section>
-  <section class="section"><div class="shell two-col"><div><div class="section-title"><div><div class="kicker">Planning</div><h2>Van ochtend tot avond</h2></div></div><div class="timeline">${d.schedule.map(row=>timelineRow(row)).join('')}</div></div><aside><div class="panel"><h3>Dag ${n} in één oogopslag</h3><p><strong>Start:</strong> ${d.start}</p><p><strong>Karakter:</strong> ${d.subtitle}</p><a class="btn btn-dark" href="#kaart">Open dag ${n} op kaart</a></div><div class="panel" style="margin-top:16px"><h3>Tips</h3><ul>${d.tips.map(t=>`<li>${t}</li>`).join('')}</ul></div><div class="callout green" style="margin-top:16px"><strong>Handig:</strong> vink stops af wanneer jullie er geweest zijn. De vinkjes blijven lokaal op jullie telefoon bewaard.</div></aside></div></section>`;
+  <section class="section"><div class="shell two-col"><div><div class="section-title"><div><div class="kicker">Planning</div><h2>Van ochtend tot avond</h2></div></div><div class="timeline">${d.schedule.map(row=>timelineRow(row)).join('')}</div></div><aside><div class="panel"><h3>Dag ${n} in één oogopslag</h3><p><strong>Start:</strong> ${d.start}</p><p><strong>Karakter:</strong> ${d.subtitle}</p><a class="btn btn-dark" href="#kaart">Open dag ${n} op kaart</a></div><div class="panel" style="margin-top:16px"><h3>Tips</h3><ul>${d.tips.map(t=>`<li>${t}</li>`).join('')}</ul></div>${extras.length?`<div class="panel" style="margin-top:16px"><h3>Extra stops bij dag ${n}</h3><p>Kies wat past; deze stops zijn optioneel en vragen extra tijd.</p>${extras.map(s=>`<h4>${s.name}</h4><p>${s.why}</p>${spotBtn(s.slug)}`).join('')}</div>`:''}<div class="callout green" style="margin-top:16px"><strong>Handig:</strong> vink stops af wanneer jullie er geweest zijn. De vinkjes blijven lokaal op jullie telefoon bewaard.</div></aside></div></section>`;
 }
 function timelineRow(row){const [time,title,desc,slug]=row; const s=slug?spots[slug]:null;return `<div class="time-item"><time>${time}</time><h3>${title}</h3><p>${desc}</p>${s?`<div class="mini-actions">${spotBtn(slug)}<button class="check-btn ${isVisited(slug)?'done':''}" data-check="${slug}">${isVisited(slug)?'✓ Bezocht':'○ Afvinken'}</button></div>`:''}</div>`}
 
@@ -339,7 +392,7 @@ function renderSpots(){
 function spotCard(s){return `<article class="spot-card" data-day="${s.day}" data-name="${esc(s.name.toLowerCase())}"><img loading="lazy" src="${photo(s.photo)}" alt="${esc(s.name)}"><div class="spot-card-body"><div class="kicker"><span class="day-dot d${s.day}"></span>${dayLabel(s.day)}</div><h3>${s.name}</h3><p>${s.summary}</p><div class="spot-actions">${spotBtn(s.slug)}<button class="check-btn ${isVisited(s.slug)?'done':''}" data-check="${s.slug}">${isVisited(s.slug)?'✓ Bezocht':'○ Afvinken'}</button></div></div></article>`}
 
 function renderSpot(slug){const s=spots[slug]; if(!s) return render404();return `<section class="spot-hero"><img src="${photo(s.photo)}" alt="${esc(s.name)}"><div class="spot-hero-inner"><div class="kicker">${dayLabel(s.day)}</div><h1>${s.name}</h1><p>${s.summary}</p><div class="hero-actions"><a class="btn btn-primary" href="#planner=${s.slug}">Plan OV-route hiernaartoe →</a><button class="btn btn-secondary check-btn ${isVisited(s.slug)?'done':''}" data-check="${s.slug}">${isVisited(s.slug)?'✓ Bezocht':'○ Afvinken'}</button></div></div></section>
-<section class="section"><div class="shell"><div class="fact-grid"><div class="fact"><small>Bezoektijd</small><strong>${s.time}</strong></div><div class="fact"><small>Kosten</small><strong>${s.cost}</strong></div><div class="fact"><small>Dichtstbij</small><strong>${s.nearest}</strong></div><div class="fact"><small>Programma</small><strong>${dayLabel(s.day)}</strong></div></div><div class="two-col"><div class="panel"><h3>Waarom deze stop?</h3><p>${s.why}</p><h3>Praktisch</h3><p>${s.practical}</p><div class="hero-actions">${openExternal(s.official,'Officiële website')}${openExternal(maps(s.mapQuery),'Google Maps')}</div></div><div><div class="callout green"><strong>Op de route:</strong> bekijk de volledige planning van <a href="#dag${s.day}">dag ${s.day}</a> om te zien welke stop ervoor en erna komt.</div><p class="credit" style="margin-top:18px">${s.credit}. <a href="${commonsPage(s.photo)}" target="_blank" rel="noopener">Bron en licentie op Wikimedia Commons ↗</a></p></div></div></div></section>`}
+<section class="section"><div class="shell"><div class="fact-grid"><div class="fact"><small>Bezoektijd</small><strong>${s.time}</strong></div><div class="fact"><small>Kosten</small><strong>${s.cost}</strong></div><div class="fact"><small>Dichtstbij</small><strong>${s.nearest}</strong></div><div class="fact"><small>Programma</small><strong>${dayLabel(s.day)}${s.optional?' · optioneel':''}</strong></div></div><div class="two-col"><div class="panel"><h3>Waarom deze stop?</h3><p>${s.why}</p><h3>Praktisch</h3><p>${s.practical}</p><div class="hero-actions">${openExternal(s.official,'Officiële website')}${openExternal(maps(s.mapQuery),'Google Maps')}</div></div><div><div class="callout green"><strong>${s.optional?'Optionele stop:':'Op de route:'}</strong> ${s.optional?'bekijk de extra stops bij':'bekijk de volledige planning van'} <a href="#dag${s.day}">dag ${s.day}</a>${s.optional?' en kies wat bij jullie tijd en energie past.':' om te zien welke stop ervoor en erna komt.'}</div><p class="credit" style="margin-top:18px">${s.credit}. <a href="${commonsPage(s.photo)}" target="_blank" rel="noopener">Bron en licentie op Wikimedia Commons ↗</a></p></div></div></div></section>`}
 
 function renderMap(){return `<section class="page-head"><div class="shell"><div class="breadcrumb"><a href="#home">Home</a> / Kaart</div><div class="kicker">Oriëntatie</div><h1>Interactieve kaart</h1><p>Alle hoofdlocaties van de drie dagen. Gebruik de knoppen om één dag te tonen en tik op een marker voor de detailpagina.</p></div></section><section class="section"><div class="shell"><div class="map-controls"><button class="filter-btn active" data-map-day="all">Alle dagen</button><button class="filter-btn" data-map-day="1">Dag 1</button><button class="filter-btn" data-map-day="2">Dag 2</button><button class="filter-btn" data-map-day="3">Dag 3</button></div><div id="map"></div><div class="map-legend"><span><span class="day-dot d1"></span>Dag 1 · Westminster</span><span><span class="day-dot d2"></span>Dag 2 · Tower/City</span><span><span class="day-dot d3"></span>Dag 3 · Camden/West End</span></div><p class="credit">Kaartweergave: OpenFreeMap · kaartdata © OpenStreetMap-bijdragers.</p></div></section>`}
 
